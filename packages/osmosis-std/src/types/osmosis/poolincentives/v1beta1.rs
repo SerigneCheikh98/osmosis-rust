@@ -436,7 +436,7 @@ pub struct QueryExternalIncentiveGaugesRequest {}
 #[proto_message(type_url = "/osmosis.poolincentives.v1beta1.QueryExternalIncentiveGaugesResponse")]
 pub struct QueryExternalIncentiveGaugesResponse {
     #[prost(message, repeated, tag = "1")]
-    pub data: ::prost::alloc::vec::Vec<super::super::incentives::Gauge>,
+    pub data: ::prost::alloc::vec::Vec<super::super::incentives::v1beta1::Gauge>,
 }
 pub struct PoolincentivesQuerier<'a, Q: cosmwasm_std::CustomQuery> {
     querier: &'a cosmwasm_std::QuerierWrapper<'a, Q>,
