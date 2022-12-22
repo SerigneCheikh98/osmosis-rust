@@ -49,11 +49,11 @@ pub struct Gauge {
     /// distribute_to is where the gauge rewards are distributed to.
     /// This is queried via lock duration or by timestamp
     #[prost(message, optional, tag = "3")]
-    pub distribute_to: ::core::option::Option<super::lockup::QueryCondition>,
+    pub distribute_to: ::core::option::Option<super::super::lockup::QueryCondition>,
     /// coins is the total amount of coins that have been in the gauge
     /// Can distribute multiple coin denoms
     #[prost(message, repeated, tag = "4")]
-    pub coins: ::prost::alloc::vec::Vec<super::super::cosmos::base::v1beta1::Coin>,
+    pub coins: ::prost::alloc::vec::Vec<super::super::super::cosmos::base::v1beta1::Coin>,
     /// start_time is the distribution start time
     #[prost(message, optional, tag = "5")]
     pub start_time: ::core::option::Option<crate::shim::Timestamp>,
@@ -75,7 +75,7 @@ pub struct Gauge {
     pub filled_epochs: u64,
     /// distributed_coins are coins that have been distributed already
     #[prost(message, repeated, tag = "8")]
-    pub distributed_coins: ::prost::alloc::vec::Vec<super::super::cosmos::base::v1beta1::Coin>,
+    pub distributed_coins: ::prost::alloc::vec::Vec<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 #[derive(
     Clone,
@@ -152,10 +152,10 @@ pub struct MsgCreateGauge {
     /// distribute_to show which lock the gauge should distribute to by time
     /// duration or by timestamp
     #[prost(message, optional, tag = "3")]
-    pub distribute_to: ::core::option::Option<super::lockup::QueryCondition>,
+    pub distribute_to: ::core::option::Option<super::super::lockup::QueryCondition>,
     /// coins are coin(s) to be distributed by the gauge
     #[prost(message, repeated, tag = "4")]
-    pub coins: ::prost::alloc::vec::Vec<super::super::cosmos::base::v1beta1::Coin>,
+    pub coins: ::prost::alloc::vec::Vec<super::super::super::cosmos::base::v1beta1::Coin>,
     /// start_time is the distribution start time
     #[prost(message, optional, tag = "5")]
     pub start_time: ::core::option::Option<crate::shim::Timestamp>,
@@ -205,7 +205,7 @@ pub struct MsgAddToGauge {
     pub gauge_id: u64,
     /// rewards are the coin(s) to add to gauge
     #[prost(message, repeated, tag = "3")]
-    pub rewards: ::prost::alloc::vec::Vec<super::super::cosmos::base::v1beta1::Coin>,
+    pub rewards: ::prost::alloc::vec::Vec<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 #[derive(
     Clone,
@@ -249,7 +249,7 @@ pub struct ModuleToDistributeCoinsRequest {}
 pub struct ModuleToDistributeCoinsResponse {
     /// Coins that have yet to be distributed
     #[prost(message, repeated, tag = "1")]
-    pub coins: ::prost::alloc::vec::Vec<super::super::cosmos::base::v1beta1::Coin>,
+    pub coins: ::prost::alloc::vec::Vec<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 #[derive(
     Clone,
@@ -306,7 +306,7 @@ pub struct GaugeByIdResponse {
 pub struct GaugesRequest {
     /// Pagination defines pagination for the request
     #[prost(message, optional, tag = "1")]
-    pub pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+    pub pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
 }
 #[derive(
     Clone,
@@ -326,7 +326,7 @@ pub struct GaugesResponse {
     /// Pagination defines pagination for the response
     #[prost(message, optional, tag = "2")]
     pub pagination:
-        ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageResponse>,
+        ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageResponse>,
 }
 #[derive(
     Clone,
@@ -346,7 +346,7 @@ pub struct GaugesResponse {
 pub struct ActiveGaugesRequest {
     /// Pagination defines pagination for the request
     #[prost(message, optional, tag = "1")]
-    pub pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+    pub pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
 }
 #[derive(
     Clone,
@@ -366,7 +366,7 @@ pub struct ActiveGaugesResponse {
     /// Pagination defines pagination for the response
     #[prost(message, optional, tag = "2")]
     pub pagination:
-        ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageResponse>,
+        ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageResponse>,
 }
 #[derive(
     Clone,
@@ -389,7 +389,7 @@ pub struct ActiveGaugesPerDenomRequest {
     pub denom: ::prost::alloc::string::String,
     /// Pagination defines pagination for the request
     #[prost(message, optional, tag = "2")]
-    pub pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+    pub pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
 }
 #[derive(
     Clone,
@@ -409,7 +409,7 @@ pub struct ActiveGaugesPerDenomResponse {
     /// Pagination defines pagination for the response
     #[prost(message, optional, tag = "2")]
     pub pagination:
-        ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageResponse>,
+        ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageResponse>,
 }
 #[derive(
     Clone,
@@ -429,7 +429,7 @@ pub struct ActiveGaugesPerDenomResponse {
 pub struct UpcomingGaugesRequest {
     /// Pagination defines pagination for the request
     #[prost(message, optional, tag = "1")]
-    pub pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+    pub pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
 }
 #[derive(
     Clone,
@@ -449,7 +449,7 @@ pub struct UpcomingGaugesResponse {
     /// Pagination defines pagination for the response
     #[prost(message, optional, tag = "2")]
     pub pagination:
-        ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageResponse>,
+        ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageResponse>,
 }
 #[derive(
     Clone,
@@ -472,7 +472,7 @@ pub struct UpcomingGaugesPerDenomRequest {
     pub denom: ::prost::alloc::string::String,
     /// Pagination defines pagination for the request
     #[prost(message, optional, tag = "2")]
-    pub pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+    pub pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
 }
 #[derive(
     Clone,
@@ -492,7 +492,7 @@ pub struct UpcomingGaugesPerDenomResponse {
     /// Pagination defines pagination for the response
     #[prost(message, optional, tag = "2")]
     pub pagination:
-        ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageResponse>,
+        ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageResponse>,
 }
 #[derive(
     Clone,
@@ -540,7 +540,7 @@ pub struct RewardsEstResponse {
     /// Estimated coin rewards that will be recieved at provided address
     /// from specified locks between current time and end epoch
     #[prost(message, repeated, tag = "1")]
-    pub coins: ::prost::alloc::vec::Vec<super::super::cosmos::base::v1beta1::Coin>,
+    pub coins: ::prost::alloc::vec::Vec<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 #[derive(
     Clone,
@@ -591,33 +591,33 @@ impl<'a, Q: cosmwasm_std::CustomQuery> IncentivesQuerier<'a, Q> {
     }
     pub fn gauges(
         &self,
-        pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+        pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
     ) -> Result<GaugesResponse, cosmwasm_std::StdError> {
         GaugesRequest { pagination }.query(self.querier)
     }
     pub fn active_gauges(
         &self,
-        pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+        pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
     ) -> Result<ActiveGaugesResponse, cosmwasm_std::StdError> {
         ActiveGaugesRequest { pagination }.query(self.querier)
     }
     pub fn active_gauges_per_denom(
         &self,
         denom: ::prost::alloc::string::String,
-        pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+        pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
     ) -> Result<ActiveGaugesPerDenomResponse, cosmwasm_std::StdError> {
         ActiveGaugesPerDenomRequest { denom, pagination }.query(self.querier)
     }
     pub fn upcoming_gauges(
         &self,
-        pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+        pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
     ) -> Result<UpcomingGaugesResponse, cosmwasm_std::StdError> {
         UpcomingGaugesRequest { pagination }.query(self.querier)
     }
     pub fn upcoming_gauges_per_denom(
         &self,
         denom: ::prost::alloc::string::String,
-        pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+        pagination: ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
     ) -> Result<UpcomingGaugesPerDenomResponse, cosmwasm_std::StdError> {
         UpcomingGaugesPerDenomRequest { denom, pagination }.query(self.querier)
     }
